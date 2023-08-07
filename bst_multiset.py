@@ -12,9 +12,9 @@ class MultisetBinarySearchTree(BinarySearchTree):
             parent = current
             if new_node.value == current.value:
                 if current.duplicates is None:
-                    current.duplicates = [current.value]
+                    current.duplicates = [current]
                 else:
-                    current.duplicates.append(new_node.value)
+                    current.duplicates.append(new_node)
                 return new_node
             elif new_node.value < current.value:
                 current = current.left_node
@@ -60,3 +60,16 @@ class MultisetBinarySearchTree(BinarySearchTree):
         if self.left_node:
             self.left_node._MultisetBinarySearchTree__tree_walk(buffer, vbranch)
         return "".join(buffer)
+
+    def search(self, value):
+        if self.value == value:
+            if self.duplicates is None:
+                return self
+            else:
+                return [self] + self.duplicates
+        elif self.left_node and self.value >= value:
+            return self.left_node.search(value)
+        elif self.right_node:
+            return self.right_node.search(value)
+        else:
+            return None

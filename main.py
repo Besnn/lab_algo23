@@ -17,7 +17,8 @@ if __name__ == '__main__':
         roberto.insert(i)
         alberto.insert(i)
 
-    # print(str(bonsai))
     print(umberto)
     print(alberto)
     print(roberto)
+
+    print(umberto.search(81))

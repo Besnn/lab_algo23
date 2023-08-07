@@ -33,13 +33,3 @@ class AlternatingBinarySearchTree(BinarySearchTree):
             parent.right_node = new_node
 
         return new_node
-
-    def search(self, value):
-        if self.value == value:
-            return self
-        elif self.left_node and self.value >= value:
-            return self.left_node.search(value)
-        elif self.right_node:
-            return self.right_node.search(value)
-        else:
-            return None
