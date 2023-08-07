@@ -1,5 +1,4 @@
 from bst import BinarySearchTree
-from typing import overload
 
 class AlternatingBinarySearchTree(BinarySearchTree):
     def __init__(self, value):
@@ -32,9 +31,6 @@ class AlternatingBinarySearchTree(BinarySearchTree):
             parent.left_node = new_node
         else:
             parent.right_node = new_node
-
-        #if new_node.parent.parent is None:
-        #    return
 
         return new_node
 

@@ -55,9 +55,6 @@ class BinarySearchTree():
         else:
             parent.right_node = new_node
 
-        #if new_node.parent.parent is None:
-        #    return
-
         return new_node
 
     def search(self, value):

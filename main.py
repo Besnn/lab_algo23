@@ -1,37 +1,23 @@
-from bst import *
+from bst import BinarySearchTree
 from bst_bool import AlternatingBinarySearchTree
+from bst_multiset import MultisetBinarySearchTree
 from mock import Mock
 
 if __name__ == '__main__':
-    # bonsai = BinarySearchTree(21)
-    # bonsai.insert(44)
-    # bonsai.insert(2)
-    # print(bonsai)
-    # bonsai.insert(54)
-    # bonsai.insert(43)
-    # bonsai.insert(5)
-    # bonsai.insert(81)
-    # bonsai.insert(1)
-    # bonsai.insert(123)
-    # bonsai.insert(99)
-    # bonsai.insert(5)
-    # bonsai.insert(17)
-    # bonsai.insert(81)
-    # bonsai.insert(81)
-    # print(bonsai)
-    # print(bonsai.search(99))
-    # print(bonsai.insert(81))
-
+    umberto = MultisetBinarySearchTree(50)
     alberto = AlternatingBinarySearchTree(50)
     roberto = BinarySearchTree(50)
 
     for i in Mock.generate_integer_list(20, 100):
         if i > 50:
+            umberto.insert(81)
             roberto.insert(81)
             alberto.insert(81)
+        umberto.insert(i)
         roberto.insert(i)
         alberto.insert(i)
 
     # print(str(bonsai))
+    print(umberto)
     print(alberto)
     print(roberto)
