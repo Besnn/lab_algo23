@@ -67,8 +67,11 @@ class BinarySearchTree():
         else:
             return None
 
+###############################################################################
+# Stale Code                                                                  #
+###############################################################################
 
-    def delete(self, node):
+    def __delete(self, node):
         if node is None:
             return
 
