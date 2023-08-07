@@ -56,7 +56,7 @@ class MultisetBinarySearchTree(BinarySearchTree):
         vbranch += "|  " if self.parent.right_node is self and self.parent.left_node else "   "
 
         if self.right_node:
-            self.right_node._MultisetBinarySearchTree__tree_walk(buffer, "" + vbranch)
+            self.right_node._MultisetBinarySearchTree__tree_walk(buffer, vbranch)
         if self.left_node:
-            self.left_node._MultisetBinarySearchTree__tree_walk(buffer, "" + vbranch)
+            self.left_node._MultisetBinarySearchTree__tree_walk(buffer, vbranch)
         return "".join(buffer)
