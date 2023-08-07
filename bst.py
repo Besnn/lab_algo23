@@ -30,9 +30,9 @@ class BinarySearchTree():
         vbranch += "|  " if self.parent.right_node is self and self.parent.left_node else "   "
 
         if self.right_node:
-            self.right_node._BinarySearchTree__tree_walk(buffer, vbranch)
+            self.right_node._BinarySearchTree__tree_walk(buffer, "" + vbranch)
         if self.left_node:
-            self.left_node._BinarySearchTree__tree_walk(buffer, vbranch)
+            self.left_node._BinarySearchTree__tree_walk(buffer, "" + vbranch)
         return "".join(buffer)
 
 
@@ -55,8 +55,8 @@ class BinarySearchTree():
         else:
             parent.right_node = new_node
 
-        if new_node.parent.parent is None:
-            return
+        #if new_node.parent.parent is None:
+        #    return
 
         return new_node
 

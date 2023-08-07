@@ -1,32 +1,49 @@
 from bst import BinarySearchTree
+from typing import overload
 
 class AlternatingBinarySearchTree(BinarySearchTree):
     def __init__(self, value):
         super().__init__(value)
-        self.preferLeft = False
+        self.preferLeft = True
 
-    def __tree_walk_helper(self):
-        buffer = list()
-        buffer.append(str(self.value))
-        buffer.append("\n")
-        if self.right_node:
-            self.right_node._AlternatingBinarySearchTree__tree_walk(buffer, "")
-        if self.left_node:
-            self.left_node._AlternatingBinarySearchTree__tree_walk(buffer, "")
-        return "".join(buffer)
+    def insert(self, new_value):
+        new_node = AlternatingBinarySearchTree(new_value)
+        parent = None
+        current = self.root
+        while current is not None:
+            current.preferLeft = not current.preferLeft
+            parent = current
+            if new_node.value == current.value:
+                current = current.left_node if parent.preferLeft else parent.right_node
+            elif new_node.value < current.value:
+                current = current.left_node
+            else:
+                current = current.right_node
 
-    def __tree_walk(self, buffer, vbranch):
-        buffer.append(vbranch)
-        buffer.append("├──" if self.parent.right_node is self and self.parent.left_node else "└──")
-        buffer.append(str(self.value))
-        buffer.append("\n")
+        new_node.parent = parent
+        if parent is None:
+            self.root = new_node
+        elif new_node.value == parent.value:
+            if parent.preferLeft:
+                parent.left_node = new_node
+            else:
+                parent.right_node = new_node
+        elif new_node.value < parent.value:
+            parent.left_node = new_node
+        else:
+            parent.right_node = new_node
 
-        vbranch += "|  " if self.parent.right_node is self and self.parent.left_node else "   "
+        #if new_node.parent.parent is None:
+        #    return
 
-        if self.right_node:
-            print("right")
-            self.right_node._BinarySearchTree__tree_walk(buffer, vbranch)
-        if self.left_node:
-            print("left")
-            self.left_node._BinarySearchTree__tree_walk(buffer, vbranch)
-        return "".join(buffer)
+        return new_node
+
+    def search(self, value):
+        if self.value == value:
+            return self
+        elif self.left_node and self.value >= value:
+            return self.left_node.search(value)
+        elif self.right_node:
+            return self.right_node.search(value)
+        else:
+            return None
