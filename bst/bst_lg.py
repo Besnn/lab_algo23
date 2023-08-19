@@ -1,11 +1,11 @@
 from bst import BinarySearchTree
 
-class MultisetBinarySearchTree(BinarySearchTree):
+class ListGroupedBinarySearchTree(BinarySearchTree):
     def __init__(self, value):
         super().__init__(value)
         self.duplicates = None
     def insert(self, new_value):
-        new_node = MultisetBinarySearchTree(new_value)
+        new_node = ListGroupedBinarySearchTree(new_value)
         parent = None
         current = self.root
         while current is not None:
@@ -32,7 +32,7 @@ class MultisetBinarySearchTree(BinarySearchTree):
         return new_node
 
     def __str__(self):
-        return self._MultisetBinarySearchTree__tree_walk_helper()
+        return self._ListGroupedBinarySearchTree__tree_walk_helper()
 
     def __tree_walk_helper(self):
         buffer = list()
@@ -40,9 +40,9 @@ class MultisetBinarySearchTree(BinarySearchTree):
                                          else "[" + str(len(self.duplicates)) + "]"))
         buffer.append("\n")
         if self.right_node:
-            self.right_node._MultisetBinarySearchTree__tree_walk(buffer, "")
+            self.right_node._ListGroupedBinarySearchTree__tree_walk(buffer, "")
         if self.left_node:
-            self.left_node._MultisetBinarySearchTree__tree_walk(buffer, "")
+            self.left_node._ListGroupedBinarySearchTree__tree_walk(buffer, "")
         return "".join(buffer)
 
 
@@ -56,9 +56,9 @@ class MultisetBinarySearchTree(BinarySearchTree):
         vbranch += "|  " if self.parent.right_node is self and self.parent.left_node else "   "
 
         if self.right_node:
-            self.right_node._MultisetBinarySearchTree__tree_walk(buffer, vbranch)
+            self.right_node._ListGroupedBinarySearchTree__tree_walk(buffer, vbranch)
         if self.left_node:
-            self.left_node._MultisetBinarySearchTree__tree_walk(buffer, vbranch)
+            self.left_node._ListGroupedBinarySearchTree__tree_walk(buffer, vbranch)
         return "".join(buffer)
 
     def search(self, value):

@@ -67,6 +67,18 @@ class BinarySearchTree():
         else:
             return None
 
+    def get_height(self):
+        left = 0
+        right = 0
+        if self.left_node is not None:
+            left = self.left_node.get_height()
+        if self.right_node is not None:
+            right = self.right_node.get_height()
+
+        return max(left, right) + 1
+
+
+
 ###############################################################################
 # Stale Code                                                                  #
 ###############################################################################

@@ -1,29 +1,40 @@
 from bst import BinarySearchTree
 from bst_bool import AlternatingBinarySearchTree
-from bst_multiset import MultisetBinarySearchTree
-from test_utils import SyntheticData
+from bst_lg import ListGroupedBinarySearchTree
+from test_utils import *
+
+import sys
+
+sys.setrecursionlimit(99999)
 
 if __name__ == '__main__':
-    # umberto = MultisetBinarySearchTree(50)
-    # alberto = AlternatingBinarySearchTree(50)
-    # roberto = BinarySearchTree(50)
+    max_value = 0
+    root_value = 0
+#######################################################±#######################
+# Test 1: ~0.1% of values are duplicates
+###############################################################################
+    max_value = 9999
+    size = 5000
+    root_value = max_value//2
+
+    roberto = \
+    BinarySearchTree(root_value)
+    alberto = AlternatingBinarySearchTree(root_value)
+    umberto = ListGroupedBinarySearchTree(root_value)
+
+    for i in \
+        SyntheticData. \
+        generate_integer_list(size, max_value):
+        roberto.insert(i)
+        alberto.insert(i)
+        umberto.insert(i)
     #
-    # for i in SyntheticData.generate_integer_list(20, 100):
-    #     if i > 50:
-    #         umberto.insert(81)
-    #         roberto.insert(81)
-    #         alberto.insert(81)
-    #     umberto.insert(i)
-    #     roberto.insert(i)
-    #     alberto.insert(i)
-    #
-    # print(umberto)
-    # print(alberto)
     # print(roberto)
-    #
-    # node, duplicateFlag = umberto.search(81)
-    # print(node)
-    # if duplicateFlag is True:
-    #     for i in node.get_duplicates():
-    #         print(i)
-    print("o.o")
+    # print(alberto)
+    # print(umberto)
+    output = str(roberto.get_height()) + " " + \
+            str(alberto.get_height()) + " " + \
+            str(umberto.get_height())
+
+    print(output)
+    Export.export_values_to_file(output)
