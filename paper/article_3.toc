@@ -1,0 +1,26 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{A bit of theory}{1}{Doc-Start}%
+\contentsline {section}{\numberline {1}Basis and Experiments}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The need for multiple keys}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Priority Queues}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Maps}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Order Statistics}{2}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Why a regular BST is not enough}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Implementations}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Regular BST with left-biased insertion}{2}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}BST with alternating insertions}{2}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}BST with collection for duplicates}{2}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Expectations}{2}{subsubsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}Experiments}{3}{subsubsection.1.3.5}%
+\contentsline {section}{\numberline {2}Results}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Low Collision Rates}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}0.01\% Collision Rate}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}0.05\% Collision Rate}{3}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Moderate Collision Rates}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}0.1\% Collision Rate}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}0.5\% Collision Rate}{4}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}High Collision Rates}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Analysis and Interpretation}{5}{section.3}%
+\contentsline {section}{\numberline {4}Appendix A: Code Documentation}{6}{section.4}%
+\contentsline {section}{\numberline {5}Appendix B: Explanations about choices}{7}{section.5}%
+\contentsfinish 
